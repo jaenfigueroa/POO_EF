@@ -1,0 +1,68 @@
+﻿@model IEnumerable<POOI_EF_JAEN_FIGUEROA.Models.Pedido>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Filtrar los pedidos</h2>
+<hr />
+
+@using (Html.BeginForm("Index", "Pedidos", FormMethod.Post))
+{
+    @Html.Label("Fecha Inicial:")
+    @Html.TextBox("fechaInicio", "1755-01-01", new { type = "date", @class = "form-control" })
+
+    @Html.Label("Fecha Final:")
+    @Html.TextBox("fechaFin", "2025-12-31", new { type = "date", @class = "form-control" })
+
+    <button type="submit" class="btn btn-success mt-2">Consultar</button>
+}
+
+
+@if (ViewBag.ErrorFecha != null)
+{
+    <div class="alert alert-danger mt-4" role="alert">
+        @ViewBag.ErrorFecha
+    </div>
+}
+
+
+<br />
+
+<h2>Resultados</h2>
+<hr />
+
+<div class="alert alert-info" role="alert">
+    Cantidad de resultados: @Model.Count()
+</div>
+
+@if (Model.Any())
+{
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreCliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CantidadPedidos)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreCliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CantidadPedidos)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

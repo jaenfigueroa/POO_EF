@@ -1,0 +1,39 @@
+﻿@model IEnumerable<POOI_EF_JAEN_FIGUEROA.Models.Cliente>
+
+@{
+    ViewBag.Title = "Lista de todos los clientes";
+}
+
+<h2>Lista de todos los clientes</h2>
+
+<hr />
+
+
+<table class="table table-striped table-hover table-bordered">
+
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomCliente)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomCliente)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

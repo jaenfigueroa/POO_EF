@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Examen Final <span class="badge text-bg-secondary">2024</span></h1>
+    </section>
+    <hr/>
+
+    <div class="d-flex gap-2">
+        <div class="card" style="width: 18rem;">
+            <img src="https://blog.embluemail.com/wp-content/uploads/2017/07/emblue-contactos-no-leen-emails.jpg" class="card-img-top w-100 h-100 " alt="..." style="object-fit: cover">
+            <div class="card-body">
+                <h2 id="gettingStartedTitle" class="text-primary">Contactos</h2>
+                <p class="card-text">Listar, agregar y eliminar contactos de la base de datos.</p>
+                <p><a class="btn btn-outline-dark" href="@Url.Action("Index", "ClientesContactos", new { area = "" })">Visitar página &raquo;</a></p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://th.bing.com/th/id/OIP.RXAYGC7QPr0ff71Y89-C-AHaEo?rs=1&pid=ImgDetMain" class="card-img-top w-100 h-100" alt="..." style="object-fit: cover">
+            <div class="card-body">
+                <h2 id="librariesTitle" class="text-primary">Clientes</h2>
+                <p class="card-text">Mostrar el ID y nombre de todos los clientes de la base de datos</p>
+                <p><a class="btn btn-outline-dark" href="@Url.Action("ListarClientes", "ClientesContactos", new { area = "" })">Visitar página &raquo;</a></p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://th.bing.com/th/id/OIP.xh9xjGlCZUp_XB3-P5rwPgHaDj?rs=1&pid=ImgDetMain" class="card-img-top w-100 h-100" alt="..." style="object-fit: cover">
+            <div class="card-body">
+                <h2 id="hostingTitle" class="text-primary">Pedidos</h2>
+                <p class="card-text">Listar y filtrar todos los pedidos usando dos fechas para ello.</p>
+                <p><a class="btn btn-outline-dark" href="@Url.Action("Index", "Pedidos", new { area = "" })">Visitar página &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</main>
